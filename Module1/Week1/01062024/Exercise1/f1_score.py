@@ -9,11 +9,11 @@ def main():
     fn = 123
 
     # Call the evaluation function with the calculated values
-    evaluateClassification(tp=tp, fp=fp, fn=fn)
+    evaluate_classification(tp=tp, fp=fp, fn=fn)
 
 
 # This function evaluates the classification performance based on provided inputs
-def evaluateClassification(tp, fp, fn):
+def evaluate_classification( tp, fp, fn ):
     # Ensure true positives is an integer
     if type(tp) is not int:
         print("tp must be an integer (number of true positives)")
@@ -35,10 +35,10 @@ def evaluateClassification(tp, fp, fn):
         return
 
     # Calculate precision using a separate function
-    precision = calculatePrecision(tp, fp)
+    precision = calculate_precision(tp, fp)
 
     # Calculate recall using a separate function
-    recall = calculateRecall(tp, fn)
+    recall = calculate_recall(tp, fn)
 
     # Print the precision value
     print(f"Precision is {precision}")
@@ -47,25 +47,25 @@ def evaluateClassification(tp, fp, fn):
     print(f"Recall is {recall}")
 
     # Calculate F1-score using a separate function and print the result
-    print(f"F1-score is {calculateF1Score(precision, recall)}")
+    print(f"F1-score is {calculate_f1_score(precision, recall)}")
 
     return
 
 
 # This function calculates precision based on true and false positives
-def calculatePrecision(tp, fp):
+def calculate_precision( tp, fp ):
     # Precision = tp / (tp + fp)
     return tp / (tp + fp)
 
 
 # This function calculates recall based on true positives and false negatives
-def calculateRecall(tp, fn):
+def calculate_recall( tp, fn ):
     # Recall = tp / (tp + fn)
     return tp / (tp + fn)
 
 
 # This function calculates F1-score based on precision and recall
-def calculateF1Score(precision, recall):
+def calculate_f1_score( precision, recall ):
     # F1-score = 2 * ((precision * recall) / (precision + recall))
     return 2 * ((precision * recall) / (precision + recall))
 
