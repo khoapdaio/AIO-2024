@@ -31,7 +31,7 @@ def main():
 	n = 100
 
 	# Đặt giới hạn dưới và giới hạn trên cho phạm vi số ngẫu nhiên
-	l = 0
+	l = -1
 	r = 1
 
 	# Đặt tham số alpha cho hàm ELU
