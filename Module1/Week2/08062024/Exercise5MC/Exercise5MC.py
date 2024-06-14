@@ -4,7 +4,7 @@
 # dưới đây là gì?
 
 
-def max_kernel( num_list, k ):
+def max_kernel(num_list, k):
 	# Lấy độ dài của danh sách
 	length_list = len(num_list)
 	# Nếu danh sách rỗng, trả về danh sách rỗng
@@ -12,7 +12,7 @@ def max_kernel( num_list, k ):
 		return num_list
 	# Nếu k bằng 0, đưa ra thông báo lỗi
 	if k == 0:
-		raise Exception("K phải lớn hơn hoặc bằng 1")
+		raise SyntaxError("K phải lớn hơn hoặc bằng 1")
 	# Khởi tạo giá trị lớn nhất là phần tử đầu tiên của danh sách
 	max_numb = num_list[0]
 	# Tạo danh sách rỗng để lưu trữ các giá trị lớn nhất
@@ -38,7 +38,7 @@ print(max_kernel(num_list, k))
 # Câu hỏi 2:(Code) Hoàn thành chương trình sau với mô tả bài toán từ câu I.2. Đầu ra của chương trình
 # dưới đây là gì?
 
-def character_count( word ):
+def character_count(word):
 	# Khởi tạo từ điển kết quả
 	result = dict()
 	# Loại bỏ khoảng cách của từ đầu vào
@@ -47,7 +47,7 @@ def character_count( word ):
 	for i, letter in enumerate(word):
 		# Nếu ký tự không thuộc bảng chữ cái, đưa ra thông báo lỗi
 		if not letter.isalpha():
-			raise Exception(f"Từ [{i}] ko thuộc bảng chữ cái")
+			raise SyntaxError(f"Từ [{i}] ko thuộc bảng chữ cái")
 
 		# Nếu ký tự chưa có trong từ điển kết quả, thêm vào với giá trị 1
 		if letter not in result:
@@ -67,7 +67,7 @@ print(character_count('smiles '))
 # Câu hỏi 3:(Code) Hoàn thành chương trình sau với mô tả bài toán từ câu I.3. Đầu ra của chương trình
 # dưới đây là gì?
 
-def count_word( path: str ) -> dict:
+def count_word(path: str) -> dict:
 	"""
 	Hàm này đếm số lần xuất hiện của mỗi từ trong tệp văn bản đầu vào và trả về một từ điển
 	chứa các từ và số lần xuất hiện của chúng, được sắp xếp theo thứ tự tăng dần của số lần xuất hiện.
@@ -86,7 +86,7 @@ def count_word( path: str ) -> dict:
 	return dict(sorted(result.items(), key = lambda item: item[1]))
 
 
-def count_word_list( list_word: list, result: dict ):
+def count_word_list(list_word: list, result: dict):
 	"""
 	Hàm đệ quy này đếm số lần xuất hiện của mỗi từ trong danh sách từ và cập nhật từ điển kết quả.
 	"""
@@ -96,7 +96,6 @@ def count_word_list( list_word: list, result: dict ):
 		# Nếu từ là một danh sách con, gọi đệ quy để xử lý danh sách con đó
 		if type(word) is list:
 			count_word_list(word, result)
-			continue
 		else:
 			# Nếu từ bắt đầu bằng chữ hoa, bỏ qua
 			if word.istitle():
@@ -109,7 +108,7 @@ def count_word_list( list_word: list, result: dict ):
 				result[word] = result.get(word) + 1
 
 
-def read( path, mode = 'r', separator = ',' ):
+def read(path, mode = 'r', separator = ','):
 	"""
 	Hàm này đọc dữ liệu từ tệp văn bản đầu vào và trả về danh sách các từ được phân tách
 	bởi ký tự phân tách (separator).
@@ -135,7 +134,7 @@ print(result['man'])
 # Câu hỏi 4:(Code) Hoàn thành chương trình sau với mô tả bài toán từ câu I.4. Đầu ra của chương trình
 # dưới đây là gì?
 
-def levenshtein_distance( s, t ):
+def levenshtein_distance(s, t):
 	"""
 		Hàm này tính khoảng cách Levenshtein giữa hai chuỗi s và t.
 		Khoảng cách Levenshtein là số phép biến đổi tối thiểu (chèn, xóa, thay thế) cần thiết
@@ -171,12 +170,12 @@ def levenshtein_distance( s, t ):
 	return dp[m][n]
 
 
-assert levenshtein_distance("hi", "hello") == 4.0
-print(levenshtein_distance(" hola ", "hello"))
+assert levenshtein_distance("hi", "hello") == 4
+print(levenshtein_distance("hola", "hello"))
 
 
 # Câu hỏi 5:(Code) Hoàn thành chương trình sau. Đầu ra của chương trình dưới đây là gì?
-def check_the_number( N ):
+def check_the_number(numb):
 	list_of_numbers = []
 	result = ""
 	for i in range(1, 5):
@@ -184,11 +183,11 @@ def check_the_number( N ):
 		# Su dung append them i vao trong list_of_number
 		list_of_numbers.append(i)
 
-	if N in list_of_numbers:
-		results = "True"
-	if N not in list_of_numbers:
-		results = "False"
-	return results
+	if numb in list_of_numbers:
+		result = "True"
+	if numb not in list_of_numbers:
+		result = "False"
+	return result
 
 
 N = 7
@@ -199,7 +198,7 @@ print(results)
 
 
 # Câu hỏi 6:(Code) Hãy hoàn thành chương trình dưới đây. Đầu ra của chương trình là gì?
-def my_function( data, max, min ):
+def my_function(data, max, min):
 	result = []
 	for i in data:
 		# Your code here
@@ -226,7 +225,7 @@ print(my_function(max = max, min = min, data = my_list))
 # Câu hỏi 7:(code) Hãy hoàn thành chương trình dưới đây. Đầu ra của chương trình là gì?
 
 
-def my_function( x, y ):
+def my_function(x, y):
 	# Your code here
 	# Su dung extend de noi y vao x
 	# return x
@@ -252,13 +251,13 @@ print(my_function(list_num1, my_function(list_num2, list_num3)))
 # đây. Đầu ra của chương trình là gì?
 
 
-def find_min( n: list[int] ) -> int:
+def find_min(n: list[int]) -> int:
 	# Your code here
-	min = n[0]
+	min_num = n[0]
 	for element in n:
-		if min > element:
-			min = element
-	return min
+		if min_num > element:
+			min_num = element
+	return min_num
 
 
 my_list = [1, 22, 93, -100]
@@ -271,13 +270,13 @@ print(find_min(my_list))
 # Câu hỏi 9:(code) Hãy hoàn thành chương trình tìm phần tử có giá trị lớn nhất trong một list dưới
 # đây. Đầu ra của chương trình là gì?
 
-def find_max( n: list[int] ) -> int:
+def find_max(n: list[int]) -> int:
 	# Your code here
-	max = n[0]
+	max_numb = n[0]
 	for element in n:
-		if max < element:
-			max = element
-	return max
+		if max_numb < element:
+			max_numb = element
+	return max_numb
 
 
 my_list = [1001, 9, 100, 0]
@@ -288,7 +287,7 @@ print(find_max(my_list))
 
 
 # Câu hỏi 10:(code) Hãy hoàn thành chương trình dưới đây. Đầu ra của chương trình là gì?
-def My_function( integers, number = 1 ):
+def valdate_numb(integers, number = 1):
 	return any(  # Your code here : Thuc hien duyet tung phan tu trong integers , so sanh
 		# tung phan tu voi number , neu bang nhau tra ve True , khac nhau tra ve false
 		# vi du: integers = [1 , 2 , 3] , number = 2 , ban se tao ra list [False ,True , False ]
@@ -298,15 +297,17 @@ def My_function( integers, number = 1 ):
 
 
 my_list = [1, 3, 9, 4]
-assert My_function(my_list, -1) == False
+assert valdate_numb(my_list, -1) == False
 
 my_list = [1, 2, 3, 4]
-print(My_function(my_list, 2))
+print(valdate_numb(my_list, 2))
 
 
 # Câu hỏi 11:(code) Hãy hoàn thành chương trình dưới đây. Đầu ra của chương trình là gì?
 
-def my_function( list_nums = [0, 1, 2] ):
+def my_function(list_nums = None):
+	if list_nums is None:
+		list_nums = [0, 1, 2]
 	var = 0
 	for i in list_nums:
 		var += i
@@ -321,7 +322,7 @@ print(my_function())
 
 # Câu hỏi 12:(code) Hãy hoàn thành chương trình dưới đây. Đầu ra của chương trình dưới đây là gì?
 
-def my_function( data ):
+def my_function(data):
 	var = []
 	for i in data:
 		# Your code here
@@ -340,7 +341,7 @@ print(my_function([1, 2, 3, 5, 6]))
 # của chương trình dưới đây là gì?
 
 
-def tinh_giai_thua( y ):
+def tinh_giai_thua(y):
 	var = 1
 	while (y > 1):
 		# Your code here
@@ -356,7 +357,7 @@ print(tinh_giai_thua(4))
 # Câu hỏi 14:(code) Hãy hoàn thành chương trình đảo ngược chuỗi dưới đây. Đầu ra của chương trình
 # là gì?
 
-def reverse_word( x ):
+def reverse_word(x):
 	# your code here
 	return x[::-1]
 
@@ -369,14 +370,14 @@ print(reverse_word(x))
 
 
 # Câu hỏi 15:(code) Hãy hoàn thành chương trình dưới đây. Đầu ra của chương trình là gì?
-def function_helper( x ):
+def is_greater(x):
 	# Your code here
 	# Neu x >0 tra ve 'T ', nguoc lai tra ve 'N'
 	return 'T' if x > 0 else 'N'
 
 
-def validate_numb( data ):
-	res = [function_helper(x) for x in data]
+def validate_numb(data):
+	res = [is_greater(x) for x in data]
 	return res
 
 
@@ -391,17 +392,17 @@ print(validate_numb(data))
 # ra của chương trình là gì?
 
 
-def function_helper( x, data ):
+def is_duplicate(x, data):
 	for i in data:
 		if x == i:
 			return 0
 	return 1
 
 
-def my_function( data ):
+def my_function(data):
 	res = []
 	for i in data:
-		if function_helper(i, res):
+		if is_duplicate(i, res):
 			res.append(i)
 	return res
 
