@@ -5,7 +5,7 @@
 # • Note: Giả sử các từ nhập vào đều có các chữ cái thuộc [a-z] hoặc [A-Z]
 
 
-def count_char( word: str ) -> dict:
+def count_char(word: str) -> dict:
 	"""
 	Hàm này đếm số lần xuất hiện của mỗi ký tự trong từ đầu vào và trả về một từ điển
 	chứa các ký tự và số lần xuất hiện của chúng, được sắp xếp theo thứ tự tăng dần
@@ -20,7 +20,8 @@ def count_char( word: str ) -> dict:
 	for i, letter in enumerate(word):
 		# Nếu ký tự không thuộc bảng chữ cái, đưa ra thông báo lỗi
 		if not letter.isalpha():
-			raise Exception(f"Từ [{i}] ko thuộc bảng chữ cái")
+			print(f"Từ [{i}] ko thuộc bảng chữ cái")
+			return dict()
 
 		# Nếu ký tự chưa có trong từ điển kết quả, thêm vào với giá trị 1
 		if letter not in result:
@@ -35,8 +36,10 @@ def count_char( word: str ) -> dict:
 
 def main():
 	string = 'Happiness'
-
-	print(count_char(string))
+	result = {'H': 1, 'a': 1, 'i': 1, 'n': 1, 'e': 1, 'p': 2, 's': 2}
+	assert count_char(string) == result
+	string= 'Happines0'
+	assert count_char(string) == dict()
 
 
 if __name__ == '__main__':

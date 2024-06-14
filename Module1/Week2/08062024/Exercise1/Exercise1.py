@@ -4,7 +4,7 @@
 # lớn hơn hoặc bằng 1
 
 
-def get_max_numb_list( num_list: list, k: int = 1 ) -> list:
+def get_max_numb_list(num_list: list, k: int = 1) -> list:
 	"""
 	Hàm này tìm giá trị lớn nhất trong mỗi đoạn con có độ dài k của danh sách đầu vào
     và trả về danh sách các giá trị lớn nhất đó.
@@ -17,7 +17,8 @@ def get_max_numb_list( num_list: list, k: int = 1 ) -> list:
 		return num_list
 	# Nếu k bằng 0, đưa ra thông báo lỗi
 	if k == 0:
-		raise Exception("K phải lớn hơn hoặc bằng 1")
+		print("K phải lớn hơn hoặc bằng 1")
+		return []
 	# Khởi tạo giá trị lớn nhất là phần tử đầu tiên của danh sách
 	max_numb = num_list[0]
 	# Tạo danh sách rỗng để lưu trữ các giá trị lớn nhất
@@ -36,7 +37,9 @@ def get_max_numb_list( num_list: list, k: int = 1 ) -> list:
 
 def main():
 	num_list = [3, 4, 5, 1, -44, 5, 10, 12, 33, 1]
-	print(get_max_numb_list(num_list, 1))
+	assert get_max_numb_list(num_list, 3) == [5, 5, 5, 5, 10, 12, 33, 33]
+	assert get_max_numb_list([], 1) == []
+	assert get_max_numb_list(num_list, 0) == []
 
 
 if __name__ == '__main__':

@@ -46,7 +46,9 @@ def main():
 	# Ví dụ sử dụng
 	s = "kitten"
 	t = "sitting"
-	print(f"Khoảng cách Levenshtein giữa '{s}' và '{t}' là: {levenshtein_distance(s, t)}")
+
+	assert levenshtein_distance(s, t) == 3
+
 
 
 if __name__ == '__main__':

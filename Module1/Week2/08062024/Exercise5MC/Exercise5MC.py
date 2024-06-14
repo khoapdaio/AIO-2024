@@ -12,7 +12,8 @@ def max_kernel(num_list, k):
 		return num_list
 	# Nếu k bằng 0, đưa ra thông báo lỗi
 	if k == 0:
-		raise SyntaxError("K phải lớn hơn hoặc bằng 1")
+		print("K phải lớn hơn hoặc bằng 1")
+		return list()
 	# Khởi tạo giá trị lớn nhất là phần tử đầu tiên của danh sách
 	max_numb = num_list[0]
 	# Tạo danh sách rỗng để lưu trữ các giá trị lớn nhất
@@ -33,6 +34,8 @@ assert max_kernel([3, 4, 5, 1, -44], 3) == [5, 5, 5]
 num_list = [3, 4, 5, 1, -44, 5, 10, 12, 33, 1]
 k = 3
 print(max_kernel(num_list, k))
+assert max_kernel([], 3) == []
+assert max_kernel([3, 4, 5, 1, -44], 0) == []
 
 
 # Câu hỏi 2:(Code) Hoàn thành chương trình sau với mô tả bài toán từ câu I.2. Đầu ra của chương trình
@@ -47,8 +50,8 @@ def character_count(word):
 	for i, letter in enumerate(word):
 		# Nếu ký tự không thuộc bảng chữ cái, đưa ra thông báo lỗi
 		if not letter.isalpha():
-			raise SyntaxError(f"Từ [{i}] ko thuộc bảng chữ cái")
-
+			print(f"Từ [{i}] ko thuộc bảng chữ cái")
+			return dict()
 		# Nếu ký tự chưa có trong từ điển kết quả, thêm vào với giá trị 1
 		if letter not in result:
 			result[letter] = 1
@@ -61,8 +64,8 @@ def character_count(word):
 
 
 assert character_count("Baby") == {'B': 1, 'a': 1, 'b': 1, 'y': 1}
-print(character_count('smiles '))
-
+print(character_count('smiles'))
+assert character_count('smiles1') == dict()
 
 # Câu hỏi 3:(Code) Hoàn thành chương trình sau với mô tả bài toán từ câu I.3. Đầu ra của chương trình
 # dưới đây là gì?
@@ -78,7 +81,8 @@ def count_word(path: str) -> dict:
 
 	# Đọc danh sách các từ từ tệp văn bản
 	list_word = read(path, separator = ' ')
-
+	if list_word is None:
+		return dict()
 	# Đếm số lần xuất hiện của các từ trong danh sách
 	count_word_list(list_word, result)
 
@@ -129,6 +133,9 @@ file_path = 'P1_data.txt'
 result = count_word(file_path)
 assert result['who'] == 3
 print(result['man'])
+file_path = 'P1_data_1.txt'
+result = count_word(file_path)
+assert result == dict()
 
 
 # Câu hỏi 4:(Code) Hoàn thành chương trình sau với mô tả bài toán từ câu I.4. Đầu ra của chương trình
