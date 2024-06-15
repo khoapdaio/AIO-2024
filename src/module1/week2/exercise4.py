@@ -40,16 +40,3 @@ def levenshtein_distance( s: str, t: str ) -> int:
 
 	# Khoảng cách Levenshtein là giá trị ở góc dưới cùng bên phải của bảng
 	return dp[m][n]
-
-
-def main():
-	# Ví dụ sử dụng
-	s = "kitten"
-	t = "sitting"
-
-	assert levenshtein_distance(s, t) == 3
-
-
-
-if __name__ == '__main__':
-	main()

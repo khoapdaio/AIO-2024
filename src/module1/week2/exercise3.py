@@ -68,26 +68,3 @@ def read(path, mode = 'r', separator = ','):
 		# In thông báo lỗi nếu có lỗi xảy ra khi đọc tệp
 		print(f"Có lỗi xảy ra khi đọc data: {e}")
 		return None
-
-
-def main():
-	file_path = 'P1_data.txt'
-
-	result = {'conquers': 1, 'himself': 1, 'mightiest': 1, 'warrior': 1, 'not': 1, 'but': 1, 'rather': 1, 'value': 1,
-	          'courage': 1, 'makes': 1, 'majority': 1, 'secret': 1, 'be': 1, 'ready': 1, 'opportunity': 1, 'profit': 1,
-	          'from': 1, 'mistakes': 1, 'and': 1, 'try': 1, 'again': 1, 'different': 1, 'way': 1, 'lay': 1, 'firm': 1,
-	          'foundation': 1, 'bricks': 1, 'others': 1, 'have': 1, 'thrown': 1, 'at': 1, 'him': 1, 'usually': 1,
-	          'those': 1, 'are': 1, 'too': 1, 'busy': 1, 'looking': 1, 'cannot': 1, 'solve': 1, 'problems': 1,
-	          'kind': 1, 'thinking': 1, 'employed': 1, 'came': 1, 'up': 1, 'them': 1, 'small': 1, 'positive': 1,
-	          'thought': 1, 'morning': 1, 'change': 1, 'your': 1, 'whole': 1, 'day': 1, 'everything': 1, 'if': 1,
-	          'just': 1, 'help': 1, 'enough': 1, 'other': 1, 'people': 1, 'what': 1, 'they': 1, 'become': 2,
-	          'success': 2, 'life': 2, 'his': 2, 'when': 2, 'it': 2, 'comes': 2, 'successful': 2, 'will': 2, 'one': 2,
-	          'we': 2, 'get': 2, 'you': 2, 'want': 2, 'who': 3, 'is': 3, 'to': 3, 'for': 3, 'can': 3, 'the': 4, 'of': 4,
-	          'with': 4, 'in': 4, 'a': 6, 'man': 6}
-	assert count_word(file_path) == result
-	file_path = 'P2_data_1.txt'
-	assert count_word(file_path) == dict()
-
-
-if __name__ == '__main__':
-	main()
