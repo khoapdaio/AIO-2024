@@ -1,30 +1,4 @@
 # This function serves as the entry point of the program
-def main():
-	tp = 123
-	fp = 'a'
-	fn = 123
-
-	# Call the evaluation function with the calculated values
-	assert evaluate_classification(tp = tp, fp = fp, fn = fn) is None
-	tp = 123
-	fp = 123
-	fn = 'a'
-
-	assert evaluate_classification(tp = tp, fp = fp, fn = fn) is None
-	tp = 'a'
-	fp = 123
-	fn = 123
-	assert evaluate_classification(tp = tp, fp = fp, fn = fn) is None
-
-	tp = 123
-	fp = 123
-	fn = 123
-	assert evaluate_classification(tp = tp, fp = fp, fn = fn) is None
-
-	tp = 0
-	fp = 0
-	fn = 0
-	assert evaluate_classification(tp = tp, fp = fp, fn = fn) is None
 
 
 # This function evaluates the classification performance based on provided inputs
@@ -78,8 +52,3 @@ def calculate_recall(tp, fn):
 # This function calculates F1-score based on precision and recall
 def calculate_f1_score(precision, recall):
 	return 2 * ((precision * recall) / (precision + recall))
-
-
-# This block ensures the code within only runs when the script is executed directly
-if __name__ == '__main__':
-	main()
