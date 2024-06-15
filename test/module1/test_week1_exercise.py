@@ -45,8 +45,6 @@ class TestWeek1(unittest.TestCase):
 		# Tạo một danh sách rỗng để lưu trữ các số ngẫu nhiên
 		random_list = []
 
-		# Đặt số lượng số ngẫu nhiên cần tạo
-		n = 100
 
 		# Đặt giới hạn dưới và giới hạn trên cho phạm vi số ngẫu nhiên
 		l = -1
@@ -56,9 +54,12 @@ class TestWeek1(unittest.TestCase):
 		a = 1.0
 
 		# Tạo số ngẫu nhiên và thêm vào danh sách
-		for _ in range(n):
-			random_num = random.randint(l, r)
-			random_list.append(random_num)
+
+		random_list.append(random.randint(l, r))
+		random_list.append(random.randint(l, r))
+		random_list.append(random.randint(l, r))
+		random_list.append(random.randint(l, r))
+		random_list.append(random.randint(l, r))
 
 		# Áp dụng hàm ELU cho mỗi phần tử trong danh sách sử dụng list comprehension
 		elu_list = [elu(i, a) for i in random_list]
@@ -68,31 +69,32 @@ class TestWeek1(unittest.TestCase):
 
 	def test_relu(self):
 		random_list = []
-		n = 100
 		l = 0
 		r = 1
-		for _ in range(n):
-			random_num = random.randint(l, r)
-			random_list.append(random_num)
+		random_list.append(random.randint(l, r))
+		random_list.append(random.randint(l, r))
+		random_list.append(random.randint(l, r))
+		random_list.append(random.randint(l, r))
+		random_list.append(random.randint(l, r))
+		random_list.append(random.randint(l, r))
 		print([relu(i) for i in random_list])
 
 	def test_sigmoid(self):
 		# Tạo một danh sách rỗng để lưu trữ các số ngẫu nhiên
 		random_list = []
 
-		# Đặt số lượng số ngẫu nhiên cần tạo
-		n = 100
+
 
 		# Đặt giới hạn dưới và giới hạn trên cho phạm vi số ngẫu nhiên
 		l = 0
 		r = 1
 
-		# Lặp để tạo danh sách n số ngẫu nhiên
-		for _ in range(n):
-			# Tạo một số ngẫu nhiên trong khoảng [l, r]
-			random_num = random.randint(l, r)
-			# Thêm số ngẫu nhiên vào danh sách
-			random_list.append(random_num)
+		# Thêm số ngẫu nhiên vào danh sách
+		random_list.append(random.randint(l, r))
+		random_list.append(random.randint(l, r))
+		random_list.append(random.randint(l, r))
+		random_list.append(random.randint(l, r))
+		random_list.append(random.randint(l, r))
 
 		# Sử dụng list comprehension để áp dụng hàm Sigmoid cho mỗi phần tử
 		# trong danh sách random_list và tạo danh sách kết quả
