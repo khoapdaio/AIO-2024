@@ -54,12 +54,12 @@ class TestWeek1(unittest.TestCase):
 
 		# Tạo số ngẫu nhiên và thêm vào danh sách
 
-		random_list.append(random.randint(-1, 1))
-		random_list.append(random.randint(-1, 1))
-		random_list.append(random.randint(-1, 1))
-		random_list.append(random.randint(-1, 1))
-		random_list.append(random.randint(-1, 1))
-		random_list.append(random.randint(-1, 1))
+		random_list.append(random.SystemRandom().randint(-1, 1))
+		random_list.append(random.SystemRandom().randint(-1, 1))
+		random_list.append(random.SystemRandom().randint(-1, 1))
+		random_list.append(random.SystemRandom().randint(-1, 1))
+		random_list.append(random.SystemRandom().randint(-1, 1))
+		random_list.append(random.SystemRandom().randint(-1, 1))
 
 		# Áp dụng hàm ELU cho mỗi phần tử trong danh sách sử dụng list comprehension
 		elu_list = [elu(i, a) for i in random_list]
@@ -70,12 +70,12 @@ class TestWeek1(unittest.TestCase):
 	def test_relu(self):
 		random_list = []
 
-		random_list.append(random.randint(0, 1))
-		random_list.append(random.randint(0, 1))
-		random_list.append(random.randint(0, 1))
-		random_list.append(random.randint(0, 1))
-		random_list.append(random.randint(0, 1))
-		random_list.append(random.randint(0, 1))
+		random_list.append(random.SystemRandom().randint(0, 1))
+		random_list.append(random.SystemRandom().randint(0, 1))
+		random_list.append(random.SystemRandom().randint(0, 1))
+		random_list.append(random.SystemRandom().randint(0, 1))
+		random_list.append(random.SystemRandom().randint(0, 1))
+		random_list.append(random.SystemRandom().randint(0, 1))
 		print([relu(i) for i in random_list])
 
 	def test_sigmoid(self):
@@ -83,11 +83,11 @@ class TestWeek1(unittest.TestCase):
 		random_list = []
 
 		# Thêm số ngẫu nhiên vào danh sách
-		random_list.append(random.randint(0, 1))
-		random_list.append(random.randint(0, 1))
-		random_list.append(random.randint(0, 1))
-		random_list.append(random.randint(0, 1))
-		random_list.append(random.randint(0, 1))
+		random_list.append(random.SystemRandom().randint(0, 1))
+		random_list.append(random.SystemRandom().randint(0, 1))
+		random_list.append(random.SystemRandom().randint(0, 1))
+		random_list.append(random.SystemRandom().randint(0, 1))
+		random_list.append(random.SystemRandom().randint(0, 1))
 
 		# Sử dụng list comprehension để áp dụng hàm Sigmoid cho mỗi phần tử
 		# trong danh sách random_list và tạo danh sách kết quả
