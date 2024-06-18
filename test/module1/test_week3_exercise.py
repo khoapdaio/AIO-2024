@@ -163,7 +163,7 @@ class TestWeek3(unittest.TestCase):
 		ward = Ward("Ward B")
 		ward.add_person(self.student)
 		self.assertEqual(len(ward.people), 1)
-		self.assertEqual(ward.people[0], self.student)
+		self.assertEqual(ward.people.index(self.student), 0)
 
 	def test_describe(self):
 		description = self.ward.describe()
